@@ -223,7 +223,7 @@ async def _finish_onboarding(update, context, raw_profile):
     return CHAT
 
 
-BOT_MODEL = "claude-haiku-4-5-20251001"  # Haiku для скорости в боте
+BOT_MODEL = "claude-haiku-4-5"  # Haiku для скорости в боте
 
 
 def _generate_personal_release(persona: dict) -> str:

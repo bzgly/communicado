@@ -1,6 +1,6 @@
 """
-Интеграционные тесты: полный closed loop через реальный LLM (Haiku via Eliza).
-Запуск: cd closed_loop && python -m pytest tests/test_integration.py -v
+Интеграционные тесты: полный closed loop (mock-режим или реальный LLM).
+Запуск: python -m pytest tests/test_integration.py -v
 """
 import os
 import pytest

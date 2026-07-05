@@ -1,9 +1,9 @@
 """
-Прод-тест: реальные LLM-вызовы через Eliza API.
+Прод-тест: реальные LLM-вызовы через Anthropic API.
 Запуск: USE_MOCK=0 python test_prod.py
 
-Требует: YA_TOKEN или SOY_TOKEN в окружении.
-Расходует ~50-100 LLM-коллов (Haiku), ~$0.1-0.2.
+Требует: ANTHROPIC_API_KEY в окружении (или в .env).
+Расходует ~50-100 LLM-коллов.
 """
 
 import os
@@ -150,11 +150,11 @@ def test_channel_adaptation():
 
 if __name__ == "__main__":
     print("CB Communication Closed Loop — Prod Tests")
-    print("Модель: claude-haiku-4-5-20251001 via Eliza")
+    print(f"Модель: {os.environ.get('CLAUDE_MODEL', 'claude-opus-4-8')}")
     print()
 
     if not check_api():
-        print("\nAPI недоступен. Проверьте YA_TOKEN/SOY_TOKEN.")
+        print("\nAPI недоступен. Проверьте ANTHROPIC_API_KEY.")
         sys.exit(1)
 
     time.sleep(DELAY)
