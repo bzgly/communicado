@@ -215,7 +215,7 @@ E.append(PageBreak())
 
 # ── Слайд 6: Демо 1 ──
 E += slide_title("Демо: Closed Loop в действии",
-                  "Реальный прогон через Claude Haiku 4.5 via Eliza, 64 LLM-колла")
+                  "Реальный прогон через Claude API (Haiku 4.5), 64 LLM-колла")
 E.append(Paragraph("<b>Communication Score:</b> 35 → 58 → 72 | <b>Flesch:</b> 14.3 → 44.3 (+30) | <b>Жаргон:</b> 6 → 2", S("sc", 12, ACCENT, space_after=10)))
 E.append(tbl([
     ["Итерация", "Score", "Clarity", "Anxiety", "Главная проблема"],
@@ -310,7 +310,7 @@ E.append(PageBreak())
 E += slide_title("Технический стек")
 E.append(tbl([
     ["Компонент", "Технология", "Количество"],
-    ["LLM-агенты", "Claude Haiku 4.5 (Anthropic\nчерез Eliza proxy)", "8 ролей: экстрактор,\nинтервьюер, 6 персон,\nаналитик, редактор, валидатор"],
+    ["LLM-агенты", "Claude Haiku 4.5\n(Anthropic API)", "8 ролей: экстрактор,\nинтервьюер, 6 персон,\nаналитик, редактор, валидатор"],
     ["Closed loop", "Python, structured JSON output", "~33 LLM-колла за итерацию\n~165 за 5 итераций"],
     ["Каналы", "Тот же loop, разные персоны", "~660 коллов на 4 канала"],
     ["Демо", "Streamlit + Plotly", "4 вкладки: loop, каналы,\nсравнение, лог"],
@@ -349,7 +349,7 @@ for i, r in enumerate(refs):
     E.append(Paragraph(f"{i + 1}. {r}", S_SM))
 
 # ── Сборка ──
-output = os.path.join(os.path.dirname(__file__), "presentation.pdf")
+output = os.path.join(os.path.dirname(__file__), "docs", "presentation.pdf")
 doc = SimpleDocTemplate(output, pagesize=landscape(A4),
                         leftMargin=2.5 * cm, rightMargin=2.5 * cm,
                         topMargin=2 * cm, bottomMargin=2 * cm)
